@@ -1,49 +1,36 @@
-def Escola():
-    idade= int(input("\nQual é sua idade? "))
+def main():
+    print("=== Formulário de Notas ===")
+    nome = input("Nome: ")
+    matricula = input("Número de Matrícula: ")
+    serie = input("Série: ")
+    turno = input("Turno (Manhã/Tarde/Noite): ")
 
-    if idade >= 18:
-        print("\nVocê pode aceesar o site.")
-    else:
-        print("\nVocê é moner de idade, não pode acessar nosso site.")
+    notas = []
+    for i in range(1, 5):
+        while True:
+            try:
+                nota = float(input(f"Nota {i}º Bimestre: "))
+                if 0 <= nota <= 10:
+                    notas.append(nota)
+                    break
+                else:
+                    print("Nota deve ser entre 0 e 10. Tente novamente.")
+            except ValueError:
+                print("Entrada inválida. Digite um número.")
 
-    nome= input("\nQual é seu nome?")
+    soma = sum(notas)
+    media = soma / 4
 
-    #endereco= input("\nQual é seu endereço?")
-    
-    fun= int(input("\nDigite 1 para aluno, 2 para professor, 3 para diretor, 4 para coordenador: "))
-    if fun== 1:
-        print("\nVocê entrou como aluno.")
+    situacao = "Aprovado" if media >= 6 else "Recuperação"
 
-    if fun== 2:
-        print("\nVocê entrou como professor.")
-    N= int(input("\nA nota do aluno é? "))
-    av= int(input("\nDigite 1 para lançar nota, 2 para lançar avaliação: "))
+    print("\n=== Resultado ===")
+    print(f"Aluno: {nome}")
+    print(f"Matrícula: {matricula}")
+    print(f"Série: {serie}")
+    print(f"Turno: {turno}")
+    print(f"Soma das Notas: {soma:.2f}")
+    print(f"Média: {media:.2f}")
+    print(f"Situação: {situacao}")
 
-    if av== 1:
-        print("A nota lançada para o aluno",nome,"e a nota dele é",N)
-
-    opc= int(input("\nDigite 1 para consultar nota, 2 para consultar avaliações, 3 para sair: "))
-    if opc == 1:
-        print("\nSua nota é",N)
-    if opc== 2:
-        print("\nSua avaliação sera dia 04/08/2100")
-    if opc== 3:
-        print("Sair.")
-    
-    if av== 2:
-        opc2= int(input("\nQuando será feita a avaliação? "))
-        print("A avaliação será aplicada no dia ",opc2)
-        print("sair.")
-
-    if fun==3:
-        print("\nVocê entrou como Diretor.")
-        N1= int(input("\nDigite 1 para Gestão Administrativa, 2 para Gestão pedagogica, 3 para projetos e 4 para disciplina: "))
-
-        if N1== 1:
-            print("Você agora estar em gestão administrativa.")
-             
-
-
- 
-Escola()
-    
+if __name__ == "__main__":
+    main()
