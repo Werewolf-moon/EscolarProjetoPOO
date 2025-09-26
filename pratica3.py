@@ -28,8 +28,8 @@ def visualizar_livros():
  for i, livro in enumerate(livros): 
     print(f"{i+1}. {livro['titulo']} - {livro['autor']} ({livro['paginas']} páginas) - Editora {livro['editora']}")
 
-def adicionar_usuario()
- identidade = input("Identidade: ") 
+def adicionar_usuario():
+    identidade = input("Identidade: ") 
 cpf = input("CPF: ") 
 nome = input("Nome: ") 
 endereco = input("Endereço: ") 
