@@ -25,3 +25,4 @@ if moto1.velocidade > moto2.velocidade:
     moto1.detalhes()
 else:
     moto2.detalhes()
+    print("The End.")
