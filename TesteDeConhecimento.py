@@ -13,12 +13,12 @@ class Tipo(Jogos):
         super().__init__(nome_jogo, datalan, genero, tipo)
 
     def apresentar(self):
-        base= super().apresentar
-        return f"O jogo é do tipo {self.tipo}, com o genêro {self.genero}"
+        base= super().apresentar()
+        return f"{base} O jogo é do tipo {self.tipo}, com o genêro {self.genero}."
 
 class Jogador(Tipo):
-    def __init__(self, nome_jogo=None, datalan=None, genero=None, tipo=None, nome_jogador= None, tipo_jogador= None, caracteristica_jogador= None):
-        super().__init__(nome_jogo, datalan, genero, tipo, nome_jogador, tipo_jogador, caracteristica_jogador)
+    def __init__(self, nome_jogo= None, datalan= None, genero= None, tipo= None, nome_jogador= None, tipo_jogador= None, caracteristica_jogador= None):
+        super().__init__(nome_jogo, datalan, genero, tipo)
         self.nome_jogador= nome_jogador
         self.tipo_jogador= tipo_jogador
         self.caracteristica_jogador= caracteristica_jogador
@@ -27,8 +27,8 @@ class Jogador(Tipo):
         return f"O nome do jogador é {self.nome_jogador}, o jogador é do tipo {self.tipo_jogador}, sua caracteristica é {self.caracteristica_jogador}"
     
 class Gameplay(Jogador):
-    def __init__(self, nome_jogo=None, datalan=None, genero=None, tipo=None, nome_jogador=None, tipo_jogador=None, caracteristica_jogador=None, partida= None):
-        super().__init__(nome_jogo, datalan, genero, tipo, nome_jogador, tipo_jogador, caracteristica_jogador, partida)
+    def __init__(self, nome_jogo= None, datalan= None, genero= None, tipo= None, nome_jogador= None, tipo_jogador= None, caracteristica_jogador= None, partida= None):
+        super().__init__(nome_jogo, datalan, genero, tipo, nome_jogador, tipo_jogador, caracteristica_jogador)
         self.partida= partida
 
     def apresentar(self):
@@ -59,12 +59,13 @@ caracteristica_jogador= input()
 print("Como foi sua Gameplay? ")
 gameplay= input()
 
-print(Jogos.apresentar())
-print(Tipo.apresentar())
-print(Jogador.apresentar())
-print(Gameplay.apresentar())
+#Exibição dos dados coletados
+jogo= Jogos(nome, data_lançamento, genero, tipo)
+tipo_jogo= Tipo(nome, data_lançamento, genero, tipo)
+player= Jogador(nome, data_lançamento, genero, tipo, nome_jogador, tipo_jogador, caracteristica_jogador)
+game= Gameplay(nome, data_lançamento, genero, tipo, nome_jogador, tipo_jogador, caracteristica_jogador, gameplay)
 
-#Exemplo de uso das classes
-#falta melhorias no código para funcionar corretamente
-#TESTE
-
+print(jogo.apresentar())
+print(tipo_jogo.apresentar())
+print(player.apresentar())
+print(game.apresentar())
