@@ -12,7 +12,7 @@ class iluminismo:
         self.desilumizar= desilumizar
 
     def executar(self):
-        print("As pessoas estão {self.}")
+     return f"As pessoas estão {self.iluninar} a ser iluminadas."
 
 def fazer_executar(obj):
     obj.executar()
@@ -25,12 +25,20 @@ def fazer_executar(obj):
 
 
 class Pensamento:
+    def __init__(self, pensar= None, imaginar= None, duvidar= None):
+        self.pensar= pensar
+        self.imaginar= imaginar
+        self.duvidar= duvidar
     def executar(self):
-        print("Som gravado: quack quack!")
+        return f"Estou a {self.pensar} sobre mminha {self.imaginar}."
 
 class Ideia:
+    def __init__(self, viver= None, morrer= None):
+        self.viver= viver
+        self.morrer= morrer
+
     def executar(self):
-        print("Eu gosto de viver minha vida")
+        return f"Eu quero viver? {self.viver}. Eu quero morrer? {self.morrer}"
 
 objetos = [exploração(), iluminismo(), Pensamento(), Ideia()]
 for obj in objetos:
