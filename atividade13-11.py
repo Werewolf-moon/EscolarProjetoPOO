@@ -12,24 +12,23 @@ class iluminismo(exploracao):
         self.escolher = escolher
 
     def executar(self):
-        return f"a {self.pessoa} Quer {self.escolher}"
+        return f"\na {self.pessoa} Quer {self.escolher},"
 
 
-class Pensamento:
-    def __init__(self, pensar= None, imaginar= None, duvidar= None):
+class Pensamento(iluminismo):
+    def __init__(self, pensar= None, imaginar= None):
         self.pensar= pensar
         self.imaginar= imaginar
-        self.duvidar= duvidar
     def executar(self):
         return f"Estou a {self.pensar} sobre mminha {self.imaginar}."
 
-class Ideia:
-    def __init__(self, viver= None, morrer= None):
+class Ideia(Pensamento):
+    def __init__(self, viver= None, morrer= None, desisão= None):
         self.viver= viver
         self.morrer= morrer
 
     def executar(self):
-        return f"Eu quero viver? {self.viver}. Eu quero morrer? {self.morrer}"
+        return f"Você quer."
 
 print("Qual o nome do seu país")
 pais = input();
@@ -37,15 +36,37 @@ print("Qual país voce quer colonizar?")
 colonizar = input();
 explorar = exploracao(pais, colonizar)
 
-print("Qual o seu nome?");
-nome = input();
-print("Gostaria de ser iluminado? 1 = sim 2 = não");
-escolha = input();
+print("Qual o seu nome? ")
+nome = input()
+print("Gostaria de ser iluminado? 1 = sim 2 = não ");
+escolha = input()
+
 if escolha == 1:
     iluminacao = iluminismo(nome, "ser iluminada")
+    print(escolha)
 if escolha == 2:
     iluminacao = iluminismo(nome, "não ser iluminada")
+    print(escolha)
 
-objetos = [explorar, iluminacao, Pensamento(), Ideia()]
+print("O que voê quer pensar? ")
+pensando = input()
+print("O que você quer imaginar? ")
+imaginando = input()
+pensamento = Pensamento(pensando, imaginando)
+
+
+print("Digite 1 para viver ou 2 para morrer: ")
+int(input(desisão))
+Idealização= Ideia(viver, morrer)
+
+if decisão == 1:
+    ideia = Ideia(viver, "Viver")
+    print(decisão)
+
+if decisão == 2:
+    ideia = Ideia(morrer, "Morrer")
+    print(decisão)
+
+objetos = [explorar, iluminacao, pensamento, Idealização]
 for obj in objetos:
     print(obj.executar())

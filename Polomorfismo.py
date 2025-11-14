@@ -6,13 +6,13 @@ class exploração:
     def expor(self) -> str:
         return f"\nA exploração estar querendo {self.colonizar}(colonizar sim/não) o mundo, estar {self.ocupar}"
 
-class iluminismo:
+class iluminismo(exploração):
     def __init__(self, iluninar= None, desilumizar= None):
         self.iluninar= iluninar
         self.desilumizar= desilumizar
 
     def executar(self):
-     return f"As pessoas estão {self.iluninar} a ser iluminadas."
+     return f"\nAs pessoas estão {self.iluninar} a ser iluminadas."
 
 def fazer_executar(obj):
     obj.executar()
@@ -24,7 +24,7 @@ def fazer_executar(obj):
 #fazer_quack(h)
 
 
-class Pensamento:
+class Pensamento(iluminismo):
     def __init__(self, pensar= None, imaginar= None, duvidar= None):
         self.pensar= pensar
         self.imaginar= imaginar
@@ -32,7 +32,7 @@ class Pensamento:
     def executar(self):
         return f"Estou a {self.pensar} sobre mminha {self.imaginar}."
 
-class Ideia:
+class Ideia(Pensamento):
     def __init__(self, viver= None, morrer= None):
         self.viver= viver
         self.morrer= morrer
