@@ -55,18 +55,16 @@ imaginando = input()
 pensamento = Pensamento(pensando, imaginando)
 
 
-print("Digite 1 para viver ou 2 para morrer: ")
-int(input(desisão))
-Idealização= Ideia(viver, morrer)
+decisão= int(input(("Digite 1 para viver ou 2 para morrer: ")))
 
 if decisão == 1:
-    ideia = Ideia(viver, "Viver")
+    ideia = Ideia("Viver")
     print(decisão)
 
 if decisão == 2:
-    ideia = Ideia(morrer, "Morrer")
+    ideia = Ideia("Morrer")
     print(decisão)
 
-objetos = [explorar, iluminacao, pensamento, Idealização]
+objetos = [explorar, iluminacao, pensamento, decisão]
 for obj in objetos:
     print(obj.executar())
