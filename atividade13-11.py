@@ -42,18 +42,18 @@ print("Gostaria de ser iluminado? 1 = sim 2 = não ");
 escolha = input()
 
 if escolha == 1:
-    iluminacao = iluminismo(nome, "ser iluminada")
+    ilumunar =iluminismo(nome, "ser iluminada")
     print(escolha)
+
 if escolha == 2:
-    iluminacao = iluminismo(nome, "não ser iluminada")
+    ilumunar =iluminismo(nome, "não ser iluminada")
     print(escolha)
 
 print("O que voê quer pensar? ")
 pensando = input()
 print("O que você quer imaginar? ")
 imaginando = input()
-pensamento = Pensamento(pensando, imaginando)
-
+Pensar = Pensamento(pensando, imaginando)
 
 decisão= int(input(("Digite 1 para viver ou 2 para morrer: ")))
 
@@ -65,6 +65,6 @@ if decisão == 2:
     ideia = Ideia("Morrer")
     print(decisão)
 
-objetos = [explorar, iluminacao, pensamento, decisão]
+objetos = [explorar, iluminismo, Pensar, decisão]
 for obj in objetos:
     print(obj.executar())
