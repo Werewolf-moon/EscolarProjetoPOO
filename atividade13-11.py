@@ -58,7 +58,7 @@ if escolha == 2:
     ilumunar =iluminismo(nome, "não ser iluminada")
     print(escolha)
 
-iluminar= iluminismo(self, __pessoa= None)
+iluminar= iluminismo(self, __pessoa= None) # type: ignore
 iluminar(self.__pessoa)  = input("\nQual é o seu nome? ")
 
 
