@@ -16,7 +16,9 @@ print(cs.descricao())
 class Pessoa:
     def __init__(self, __nome=None, __idade =None):
         self.__nome = __nome
-        self.__idade = __idade 
+        self.__idade = __idade
+        self.__nome = input("\nQual é o seu nome? ")
+        self.__idade = input("\nQual é a sua idade? ") 
 
     @property
     def nomear_pessoa(self):
@@ -25,8 +27,7 @@ class Pessoa:
     @nomear_pessoa.setter
     def nomear_pessoa(self, __nome):
         self.__nome = __nome
-        self.__nome = input("\nQual é o seu nome? ")
-
+        
     @property
     def idade_pessoa(self):
         return self.__idade
@@ -34,9 +35,7 @@ class Pessoa:
     @idade_pessoa.setter
     def idade_pessoa(self, __idade):
         self.__idade = __idade
-        self.__idade = input("\nQual é a sua idade? ")
 
-       
     def pensar(self, pensar= None):
         self.pensar = input("\nNo que você gostaria de pensar? ")
         return f"\nvocê está pensando em: {self.pensar}"
