@@ -7,12 +7,21 @@ class exploracao:
         return f"\nO {self.colonizar} quer colonizar {self.ocupar}"
 
 class iluminismo(exploracao):
-    def __init__(self, pessoa = None, escolher = None):
-        self.pessoa = pessoa
+    def __init__(self, __pessoa = None, escolher = None):
+        self.__pessoa = __pessoa
         self.escolher = escolher
+        self.__pessoa = input("\nQual é o seu nome? ")
+
+    @property
+    def dar_nome(self):
+        return self.__pessoa
+
+    @dar_nome.setter
+    def dar_nome(self, __pessoa):
+        self.__pessoa = __pessoa
 
     def executar(self):
-        return f"\na {self.pessoa} Quer {self.escolher},"
+        return f"\na {self.__pessoa} Quer {self.escolher},"
 
 
 class Pensamento(iluminismo):
@@ -48,6 +57,10 @@ if escolha == 1:
 if escolha == 2:
     ilumunar =iluminismo(nome, "não ser iluminada")
     print(escolha)
+
+iluminar= iluminismo(self, __pessoa= None)
+iluminar(self.__pessoa)  = input("\nQual é o seu nome? ")
+
 
 print("O que voê quer pensar? ")
 pensando = input()

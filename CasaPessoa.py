@@ -1,5 +1,5 @@
 class Casa:
-    def __init__(self, tamanho=None, cor=None, quartos=None):
+    def __init__(self, tamanho= None, cor= None, quartos= None):
         self.tamanho = tamanho
         self.cor = cor
         self.quartos = quartos
@@ -10,16 +10,17 @@ class Casa:
         self.tamanho= input("\nQual é o tamanho da casa em metros quadrados? ")
         return (f"\nCor: {self.cor}, \nNúmero de quartos: {self.quartos}, \nTamanho: {self.tamanho} m².")
         
-cs = Casa()
-print(cs.descricao())
+casa = Casa()
+print(casa.descricao())
 
-class Pessoa:
-    def __init__(self, __nome=None, __idade =None):
+class Pessoa(Casa):
+    def __init__(self, __nome= None, __idade = None):
         self.__nome = __nome
         self.__idade = __idade
         self.__nome = input("\nQual é o seu nome? ")
         self.__idade = input("\nQual é a sua idade? ") 
 
+#Encapsulamento de nome e idade
     @property
     def nomear_pessoa(self):
         return self.__nome
@@ -27,7 +28,7 @@ class Pessoa:
     @nomear_pessoa.setter
     def nomear_pessoa(self, __nome):
         self.__nome = __nome
-        
+
     @property
     def idade_pessoa(self):
         return self.__idade
@@ -55,9 +56,9 @@ class Pessoa:
     def eu(self):
         return (f"\nNome é: {self.__nome}, \nPensamento atual é: {self.pensar}, \nDança preferida é: {self.dançar}, \nVocê Quer dormir? -> {self.dormir}.")
     
-p = Pessoa()
-print(p.cantar())
-print(p.dançar())
-print(p.pensar())
-print(p.dormir())
-print(p.eu())
+pe = Pessoa()
+print(pe.cantar())
+print(pe.dançar())
+print(pe.pensar())
+print(pe.dormir())
+print(pe.eu())
