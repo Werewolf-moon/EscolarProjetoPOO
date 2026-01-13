@@ -1,0 +1,65 @@
+Atividade sobre os tipos de Cloud
+
+Pública (Isaac):
+
+definição: As nuvens públicas fornecem recursos, como computação, armazenamento, rede, ambientes de desenvolvimento e implantação e aplicativos pela Internet.
+Eles pertencem e são executados por provedores de serviços de nuvem terceirizados, como o Google Cloud.
+
+Vantagens das nuvens públicas:
+
+Redução de custos — não há necessidade de comprar hardware ou software e você paga somente pelos serviços que usa.
+Sem manutenção — seu provedor de serviços fornece a manutenção.
+Escalabilidade quase ilimitada — recursos sob demanda estão disponíveis para atender às suas necessidades de negócios.
+Alta confiabilidade — uma ampla rede de servidores assegura contra falhas.
+
+Exemplos de Empresas:
+
+Netflix, Uber e Apple
+
+
+Privada (Eliel):
+
+definição: As nuvens privadas são criadas, executadas e usadas por uma única organização, normalmente localizada no local. Eles proporcionam maior controle, 
+personalização e segurança de dados, mas têm custos e limitações de recursos semelhantes, associados aos ambientes de TI tradicionais.
+
+Vantagens de uma nuvem privada:
+
+Maior flexibilidade — sua organização pode personalizar seu ambiente de nuvem para atender a necessidades de negócios específicas.
+Maior controle — os recursos não são compartilhados com outros usuários, portanto, é possível um nível maior de controle e privacidade.
+Maior escalabilidade — nuvens privadas geralmente oferecem mais escalabilidade em comparação com a infraestrutura local.
+
+Exemplos de Empresas:
+
+IBM fornece e EVEO usa
+ambos brasileiras
+
+
+Híbrida (João Lucas Moura):
+
+definição: Ambientes que mesclam pelo menos um ambiente de computação particular (infraestrutura de TI tradicional ou nuvem privada, incluindo borda) com uma ou mais nuvens públicas são chamados de nuvens híbridas. 
+Eles permitem que você aproveite os recursos e serviços de diferentes ambientes de computação e escolha o melhor para as cargas de trabalho. 
+
+Vantagens da nuvem híbrida:
+
+Controle — sua organização pode manter uma infraestrutura privada para ativos confidenciais ou cargas de trabalho que exigem latência baixa.
+Flexibilidade — você poderá usufruir de recursos adicionais na nuvem pública sempre que precisar deles.
+Custo-benefício — com a capacidade de escalar para a nuvem pública, você paga por potência de computação adicional somente quando necessário.
+Facilidade — a transição para a nuvem não precisa ser turbulenta porque você pode migrar gradualmente, passando as cargas de trabalho ao longo do tempo.
+
+Exemplos de Empresas:
+
+Youtube, DropFox
+
+
+Considerações finais:
+
+Isaac:
+As nuvens são essencias para a criação de APPs e sites/serviços por dar uma facilitado disponibilizando diversos recusos.
+Também as empresas podem fornecer serviços de de cloud a outras empresas e também do governo para empresas.
+
+Eliel:
+As nuvens Privadas são bem importantes para serviços do governo pois necessitão uma grande segurança dos seus dados.
+
+João Lucas Moura:
+Sobre as nuvens as impresas integram seus recursos como provedores de serviço de aplicação em múltiplos ambientes. 
+Seus serviços se aplicam em modelos de destribuição da infraestutura local.

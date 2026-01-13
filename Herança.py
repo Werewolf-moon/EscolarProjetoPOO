@@ -24,7 +24,7 @@ class Professor(Pessoa):
         base= super().apresentar() 
         return f"{base}, eu sou o professor da EEP Onelio porto, e minha matricula é {self.matricula}." 
         
-# Progama principal
+# Programa principal
 pessoa= Pessoa("José", "A123456789")  
 aluno= Aluno("Samuel", "A123", "125.294.184-14")
 professor = Professor("Henrique", "754.761.751-22", "A154") 
