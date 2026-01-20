@@ -1,89 +1,128 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="estilo.css">
-    <title>Painel</title>
-      
+<meta charset="UTF-8">
+<link rel="stylesheet" href="estilo.css">
+<title>Painel</title>
 </head>
 
 <body>
 
-    <div class="topo">
+<header class="topo">
     <img src="WhatsApp Image 2026-01-13 at 16.03.18.jpeg">
-    <h1>Papoula Acessorios</h1>
-    <form>
-    <input type="search" placeholder="Buscar...">
-    <button type="submit">Pesquisar</button>
-    </form>
-    <br>
-    </div>
 
-    <div class="meio">
-    <!--&-->
-    <div class="produto">
-    <img src="anel_100x100.png">
-    <h3>Colar dourado</h3>
-    <p>R$ 79,90</p>
-    <a href="https://wa.me/55SEUNUMERO" target="_blank">
-        Comprar
-    </a>
-    </div>
-    <!--&-->
-    <div class="produto">
-    <img src="WhatsApp Image 2026-01-13 at 16.03.18.jpeg">
-    <h3>Colar dourado</h3>
-    <p>R$ 79,90</p>
-    <a href="https://wa.me/55SEUNUMERO" target="_blank">
-        Comprar
-    </a>
-    </div>
-    <!--&-->
-    <div class="produto">
-    <img src="WhatsApp Image 2026-01-13 at 16.03.18.jpeg">
-    <h3>Colar dourado</h3>
-    <p>R$ 79,90</p>
-    <a href="https://wa.me/55SEUNUMERO" target="_blank">
-        Comprar
-    </a>
-    </div>
-    <!--&-->
-    <div class="produto">
-    <img src="WhatsApp Image 2026-01-13 at 16.03.18.jpeg">
-    <h3>Colar dourado</h3>
-    <p>R$ 79,90</p>
-    <a href="https://wa.me/55SEUNUMERO" target="_blank">
-        Comprar
-    </a>
-    </div>
-    <!--&-->
-    <div class="produto">
-    <img src="WhatsApp Image 2026-01-13 at 16.03.18.jpeg">
-    <h3>Colar dourado</h3>
-    <p>R$ 79,90</p>
-    <a href="https://wa.me/55SEUNUMERO" target="_blank">
-        Comprar
-    </a>
-    </div>
-    <!--&-->
+    <div class="barra-filtros">
+        <form class="busca-form">
+            <input type="search" placeholder="Procurar produtos">
+            <button type="submit">Pesquisar</button>
+        </form>
 
-    <!--&-->
+        <div class="accordion">
+            <button class="accordion-btn">Filtro ▾</button>
+            <div class="accordion-content">
+                <label><input type="checkbox"> Anéis</label><br>
+                <label><input type="checkbox"> Colares</label><br>
+                <label><input type="checkbox"> Brincos</label>
+            </div>
+        </div>
     </div>
+</header>
 
-    <div class="fim">
-    <p>
-    TESTE<br>
-    TESTE<br>
-    TESTE<br>
-    TESTE<br>
-    TESTE<br>
-    TESTE<br>
-    TESTE<br>
-    TESTE<br>
-    TESTE<br>
-    TESTE<br>
-</p>
+<main class="meio">
+    <h1>Produtos em Destaque</h1>
+
+    <div class="carousel">
+
+        <button class="arrow left">&#10094;</button>
+
+        <!-- AQUI ESTÁ A CORREÇÃO -->
+        <div class="carousel-viewport">
+            <div class="lista-produtos">
+
+                <div class="produto">
+                    <img src="WhatsApp Image 2026-01-13 at 16.03.18.jpeg">
+                    <h3>Colar dourado</h3>
+                    <p>R$ 79,90</p>
+                    <a href="#">Comprar</a>
+                </div>
+
+                <div class="produto">
+                    <img src="WhatsApp Image 2026-01-13 at 16.03.18.jpeg">
+                    <h3>Colar dourado</h3>
+                    <p>R$ 79,90</p>
+                    <a href="#">Comprar</a>
+                </div>
+
+                <div class="produto">
+                    <img src="WhatsApp Image 2026-01-13 at 16.03.18.jpeg">
+                    <h3>Colar dourado</h3>
+                    <p>R$ 79,90</p>
+                    <a href="#">Comprar</a>
+                </div>
+
+                <div class="produto">
+                    <img src="WhatsApp Image 2026-01-13 at 16.03.18.jpeg">
+                    <h3>Colar dourado</h3>
+                    <p>R$ 79,90</p>
+                    <a href="#">Comprar</a>
+                </div>
+
+                <div class="produto">
+                    <img src="WhatsApp Image 2026-01-13 at 16.03.18.jpeg">
+                    <h3>Colar dourado</h3>
+                    <p>R$ 79,90</p>
+                    <a href="#">Comprar</a>
+                </div>
+
+            </div>
+        </div>
+
+        <button class="arrow right">&#10095;</button>
+
     </div>
+</main>
+
+<footer class="fim">
+    <p>©Papoula Acessórios</p>
+</footer>
+
+<script>
+const accordion = document.querySelector(".accordion");
+const btn = document.querySelector(".accordion-btn");
+
+btn.addEventListener("click", () => {
+    accordion.classList.toggle("active");
+});
+
+document.addEventListener("click", (e) => {
+    if (!accordion.contains(e.target)) {
+        accordion.classList.remove("active");
+    }
+});
+</script>
+
+
+<script>
+const lista = document.querySelector(".lista-produtos");
+const btnLeft = document.querySelector(".arrow.left");
+const btnRight = document.querySelector(".arrow.right");
+
+let position = 0;
+
+const card = document.querySelector(".produto");
+const step = card.offsetWidth + 20;
+
+btnRight.addEventListener("click", () => {
+    position += step;
+    lista.style.transform = `translateX(${-position}px)`;
+});
+
+btnLeft.addEventListener("click", () => {
+    position -= step;
+    if (position < 0) position = 0;
+    lista.style.transform = `translateX(${-position}px)`;
+});
+</script>
 
 </body>
 </html>

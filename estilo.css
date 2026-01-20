@@ -1,35 +1,157 @@
+/* ===== RESET / BASE ===== */
 html, body{
-background-color: white;
-color: black;
-font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Times New Roman', Times, serif;
+    background: white;
+    color: black;
 }
 
-
-.fim{
-background-color: blueviolet;
-}
-
-.topo img {
-    width: 500px;
-    display: block;
-    margin: 0 auto;
-}
-
-.meio {
-    background-color: #720615;
+body{
     display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
 }
 
+/* ===== TOPO ===== */
+.topo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+}
 
-.produto {
+.topo img{
     width: 220px;
+}
+
+/* ===== BUSCA + FILTROS ===== */
+.barra-filtros{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.busca-form input{
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+}
+
+.busca-form button{
+    padding: 8px 12px;
+    border: none;
+    background: black;
+    color: white;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+}
+
+/* ===== ACCORDION ===== */
+.accordion{
+    position: relative;
+}
+
+.accordion-btn{
+    background: black;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.accordion-content{
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: none;
+    width: 150px;
+    z-index: 10;
+    border-radius: 5px;
+}
+
+.accordion.active .accordion-content{
+    display: block;
+}
+
+/* ===== MEIO ===== */
+.meio{
+    flex: 1;
+    background-color: #720615;
+    padding: 30px 20px;
     text-align: center;
 }
 
-.produto img {
+.meio h1{
+    color: white;
+    margin-bottom: 25px;
+}
+
+/* ===== CARROSSEL ===== */
+.carousel{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Janela fixa */
+.carousel-viewport{
+    overflow: hidden;
+    width: 760px;
+}
+
+/* Linha que se move */
+.lista-produtos{
+    display: flex;
+    gap: 20px;
+    transition: transform 0.4s ease;
+}
+
+/* ===== SETAS ===== */
+.arrow{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: black;
+    color: white;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    z-index: 5;
+}
+
+.arrow.left{
+    left: -25px;
+}
+
+.arrow.right{
+    right: -25px;
+}
+
+.arrow:hover{
+    background: #333;
+}
+
+/* ===== CARD PRODUTO (UNIFICADO) ===== */
+.produto{
+    width: 220px;
+    background: gray;
+    padding: 20px 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.produto img{
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -39,12 +161,32 @@ background-color: blueviolet;
     margin: 0 auto;
 }
 
-
-.produto a {
-    display: block;
-    background: black;
+.produto h3,
+.produto p{
     color: white;
-    padding: 10px;
-    margin-top: 10px;
+}
+
+/* ===== BOTÃO ===== */
+.produto a{
+    display: block;
+    background: rgb(255, 186, 119);
+    color: black;
+    padding: 6px;
+    width: 100px;
+    margin: 12px auto 0;
     text-decoration: none;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.produto a:hover{
+    background: rgb(255, 160, 80);
+}
+
+/* ===== RODAPÉ ===== */
+.fim{
+    background-color: darkgray;
+    padding: 20px;
+    text-align: center;
+    color: black;
 }
