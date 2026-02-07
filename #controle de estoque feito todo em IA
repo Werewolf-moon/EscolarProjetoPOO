@@ -445,4 +445,4 @@ export default function InventoryControl() {
   );
 }
 
-#feito por IA
+// #feito por IA
